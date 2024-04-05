@@ -1,43 +1,46 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const contactSchema =new mongoose.Schema({
-    firstName:{
-        type: String,
-        required:[true, "First name is required"]
+const contactSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: [true, "First name is required"],
     },
-    lastName:{
-        type: String,
-        required:[true, "Last name is required"]
+    lastName: {
+      type: String,
+      required: [true, "Last name is required"],
     },
-    email:{
-        type: String,
-        required:[true, "Email is required"]
+    email: {
+      type: String,
+      required: [true, "Email is required"],
     },
     phone: {
-        type: String,
-        required:[true, "Phone number is required"],
-        unique:[true, "Phone number must be unique"]
+      type: String,
+      required: [true, "Phone number is required"],
+      unique: [true, "Phone number must be unique"],
     },
     workPhone: {
-        type: String,
-        required:[true, "Work phone number is required"],
+      type: String,
+      required: [true, "Work phone number is required"],
     },
     address: {
-        type: String,
-        required: false
+      type: String,
+      required: false,
     },
     company: {
-        type: String,
-        required: false
+      type: String,
+      required: false,
     },
     profilePicture: {
-        type: String,
-        required: false
-    }
-},{
-    timestamps:true
-});
+      type: String,
+      required: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const contactModel = mongoose.model('contact',contactSchema);
+const contactModel = mongoose.model("contact", contactSchema);
 
 export default contactModel;
